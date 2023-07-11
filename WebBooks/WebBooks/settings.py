@@ -145,5 +145,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Упрощенная обработка статических файлов
 # https://warehouse.python.org/project/whitehouse/
-STATICFILES_STORAGE = 'whitenoise.storage.CompessedManifestStaticFilesStorage'
-
+#STATICFILES_STORAGE = 'whitenoise.storage.CompessedManifestStaticFilesStorage'
+STORAGES = {
+    # ...
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
